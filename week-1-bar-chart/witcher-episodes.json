@@ -1,0 +1,150 @@
+{
+  "title": "The Witcher",
+  "rating": 8.2,
+  "episodes": [
+    {
+      "season": 1,
+      "episode": 1,
+      "airdate": "2019-12-20",
+      "title": "The End's Beginning",
+      "rating": 8.4,
+      "votes": 23513,
+      "description": "Hostile townsfolk and a cunning mage greet Geralt in the town of Blaviken. Ciri finds her royal world upended when Nilfgaard sets its sights on Cintra."
+    },
+    {
+      "season": 1,
+      "episode": 2,
+      "airdate": "2019-12-20",
+      "title": "Four Marks",
+      "rating": 7.9,
+      "votes": 19958,
+      "description": "Bullied and neglected, Yennefer accidentally finds a means of escape. Geralt's hunt for a so-called devil goes to hell. Ciri seeks safety in numbers."
+    },
+    {
+      "season": 1,
+      "episode": 3,
+      "airdate": "2019-12-20",
+      "title": "Betrayer Moon",
+      "rating": 8.7,
+      "votes": 19636,
+      "description": "Geralt takes on another Witcher's unfinished business in a kingdom stalked by a ferocious beast. At a brutal cost, Yennefer forges a magical new future."
+    },
+    {
+      "season": 1,
+      "episode": 4,
+      "airdate": "2019-12-20",
+      "title": "Of Banquets, Bastards and Burials",
+      "rating": 8.6,
+      "votes": 18046,
+      "description": "Against his better judgment, Geralt accompanies Jaskier to a royal ball. Ciri wanders into an enchanted forest. Yennefer tries to protect her charges."
+    },
+    {
+      "season": 1,
+      "episode": 5,
+      "airdate": "2019-12-20",
+      "title": "Bottled Appetites",
+      "rating": 8.4,
+      "votes": 16854,
+      "description": "Heedless of warnings, Yennefer looks for a cure to restore what she's lost. Geralt inadvertently puts Jaskier in peril. The search for Ciri intensifies."
+    },
+    {
+      "season": 1,
+      "episode": 6,
+      "airdate": "2019-12-20",
+      "title": "Rare Species",
+      "rating": 8.2,
+      "votes": 16666,
+      "description": "A mysterious man tries to entice Geralt to join a hunt for a rampaging dragon, a quest that attracts a familiar face. Ciri questions who she can trust."
+    },
+    {
+      "season": 1,
+      "episode": 7,
+      "airdate": "2019-12-20",
+      "title": "Before a Fall",
+      "rating": 8.5,
+      "votes": 16439,
+      "description": "With the Continent at risk from Nilfgaard's rising power, Yennefer revisits her past, while Geralt reconsiders his obligation to the Law of Surprise."
+    },
+    {
+      "season": 1,
+      "episode": 8,
+      "airdate": "2019-12-20",
+      "title": "Much More",
+      "rating": 8.9,
+      "votes": 19249,
+      "description": "A terrifying pack of foes lays Geralt low. Yennefer and her fellow mages prepare to fight back. A shaken Ciri depends on the kindness of a stranger."
+    },
+    {
+      "season": 2,
+      "episode": 1,
+      "airdate": "2021-12-17",
+      "title": "A Grain of Truth",
+      "rating": 8.7,
+      "votes": 11854,
+      "description": "Geralt sets off with Ciri on a journey that leads him to an old friend. After the battle of Sodden, Tissaia shows no mercy in her search of information."
+    },
+    {
+      "season": 2,
+      "episode": 2,
+      "airdate": "2021-12-17",
+      "title": "Kaer Morhen",
+      "rating": 7.7,
+      "votes": 9699,
+      "description": "Seeking a safe place for Ciri, Geralt heads for home, but danger lurks everywhere - even Kaer Morhen. Yennefer's dreams could be the key to her freedom."
+    },
+    {
+      "season": 2,
+      "episode": 3,
+      "airdate": "2021-12-17",
+      "title": "What Is Lost",
+      "rating": 8.0,
+      "votes": 8341,
+      "description": "Impatient with Geralt's methods, Ciri braves major obstacles to prove her mettle. Scheming and suspicion among the Brotherhood make Yennifer a target."
+    },
+    {
+      "season": 2,
+      "episode": 4,
+      "airdate": "2021-12-17",
+      "title": "Redanian Intelligence",
+      "rating": 7.9,
+      "votes": 7946,
+      "description": "A guest at Kaer Morhen extends a guiding hand to Ciri - and an invitation to Geralt. On the run in Redania, Yennifer seeks safety below ground."
+    },
+    {
+      "season": 2,
+      "episode": 5,
+      "airdate": "2021-12-17",
+      "title": "Turn Your Back",
+      "rating": 8.1,
+      "votes": 7662,
+      "description": "As a powerful mage joins the hunt for Ciri, she cuts a deal with Vesemir over his extraordinary discovery. Geralt explores the mystery of the monoliths."
+    },
+    {
+      "season": 2,
+      "episode": 6,
+      "airdate": "2021-12-17",
+      "title": "Dear Friend...",
+      "rating": 8.2,
+      "votes": 7560,
+      "description": "A close friend is lost - and another found - as Geralt helps Ciri learn more about her power. Cahir warns Fringilla to focus on their primary mission."
+    },
+    {
+      "season": 2,
+      "episode": 7,
+      "airdate": "2021-12-17",
+      "title": "Voleth Meir",
+      "rating": 8.4,
+      "votes": 7583,
+      "description": "Geralt turns to a humble bard for help, Yennifer realizes just how special Ciri is, and tensions rise on the eve of Emperor Emhyr's visit to Cintra."
+    },
+    {
+      "season": 2,
+      "episode": 8,
+      "airdate": "2021-12-17",
+      "title": "Family",
+      "rating": 8.6,
+      "votes": 9526,
+      "description": "Geralt faces off with a demon targeting his nearest and dearest while the most powerful players on the continent ramp up their pursuit of Ciri."
+    }
+  ]
+}
