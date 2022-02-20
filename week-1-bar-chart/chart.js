@@ -1,7 +1,7 @@
 // Define chart sizes
 const width = 800;
 const height = 600;
-const margin = {top: 50, right: 50, bottom: 170, left: 100};
+const margin = {top: 50, right: 100, bottom: 170, left: 100};
 const inner_width = width - margin.left - margin.right;
 const inner_height = height - margin.top - margin.bottom;
 
@@ -11,62 +11,87 @@ const svg = wrapper.append('svg')
     .attr('width', width)
     .attr('height', height);
 
+const x_value = episode => episode.title;
+const y_value = episode => episode.rating;
+const c_value = episode => episode.season;
 
-const x_value = d => d['Product/Sector'];
-const y_value = d => +d['Value'];
-const filter_data = d => {
-    return (
-        d['Year'] == 2020 && 
-        d['Indicator Code'] == 'ITS_MTV_AX' &&
-        d['Product/Sector'] != 'Total merchandise'
-    );
-};
-
-d3.csv('data.csv').then(data => {
-    // Filter and sort the data
-    data = data.filter(filter_data);
-    data = data.sort((a, b) => y_value(b) - y_value(a));
-
-    // Construct scales
+d3.json('witcher-episodes.json').then(data => {
+    const title = data['title'];
+    const series_rating = +data['rating']; 
+    const episodes = data['episodes']
+        .sort((a, b) => b.rating - a.rating);
+        
+    // Create scales
     const xScale = d3.scaleBand()
-        .domain(d3.map(data, x_value))
+        .domain(d3.map(episodes, x_value))
         .range([0, inner_width])
         .padding(0.1);
     const yScale = d3.scaleLinear()
-        .domain([0, d3.max(data, y_value)])
+        .domain([0, 10])
         .range([inner_height, 0]);
+    const colorScale = d3.scaleOrdinal()
+        .domain(d3.extent(episodes, c_value))
+        .range(d3.schemePastel2);
         
-    // Construct axis
+    // Create Axis
     const xAxis = d3.axisBottom(xScale);
     const yAxis = d3.axisLeft(yScale);
 
-    // Construct group element that will hold the chart itself
+    // Create group element that will hold inner chart
     const chart = svg.append('g').attr('transform', `translate(${margin.left}, ${margin.top})`);
 
-    // Add y-axis to the chart
+    // Draw Axis
     chart.append('g')
         .call(yAxis)
-        .call(g => g.select('.domain').remove());
+        .call(g => g.select('.domain').remove())
+        .call(g => g.selectAll('.tick > line')
+            .attr('x2', inner_width)
+            .attr('opacity', .1)
+        );
 
-    // Add x-axis to the chart
     chart.append('g')
         .attr('transform', `translate(0, ${inner_height})`)
         .call(xAxis)
-        .call(g => g.select('.domain').remove())
         .call(g => g.selectAll('.tick > line').remove())
         .selectAll('text')
             .style('text-anchor', 'end')
             .attr('transform', 'rotate(-45)');
 
-    // Draw bars
+    // Draw Bars
     chart.append('g')
         .selectAll('rect')
-        .data(data)
+        .data(episodes)
         .join('rect')
-            .attr('x', d => xScale(x_value(d)))
-            .attr('y', d => yScale(y_value(d)))
-            .attr('height', d => yScale(0) - yScale(y_value(d)))
+            .attr('x', e => xScale(x_value(e)))
+            .attr('y', e => yScale(y_value(e)))
+            .attr('height', e => yScale(0) - yScale(y_value(e)))
             .attr('width', xScale.bandwidth())
-            .attr('fill', 'steelblue');
+            .attr('fill', e => colorScale(c_value(e)));
 
+    // Legend
+    const legend = svg.append('g')
+        .attr('transform', `translate(
+            ${margin.left + inner_width + .15 * margin.right}, 
+            ${.3*height})`
+        );
+
+    // Legend Symbols
+    legend.selectAll('rect')
+        .data(colorScale.domain())
+        .join('rect')
+            .attr('x', 0)
+            .attr('y', (_, i) => i * 25)
+            .attr('width', 15)
+            .attr('height', 15)
+            .attr('fill', d => colorScale(d))
+
+    // Legend Labels
+    legend.selectAll('text')
+        .data(colorScale.domain())
+        .join('text')
+            .attr('x', 25)
+            .attr('y', (_, i) => i * 25)
+            .text(d => `Season ${d}`)
+            .style('dominant-baseline', 'text-before-edge')
+            .style('font-family', 'monospace');
 })
